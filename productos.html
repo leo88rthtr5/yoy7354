@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Productos - UrbanKicks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de productos */
+        .products-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 8rem 5% 4rem;
+            text-align: center;
+        }
+        
+       
+        
+        .sort-group {
+            margin-left: auto;
+        }
+        
+        .all-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 4rem;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem 0;
+        }
+        
+        .page-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .page-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .page-btn:hover:not(.active) {
+            background-color: #f0f0f0;
+        }
+        
+        @media (max-width: 768px) {
+            .filter-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .sort-group {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            .all-products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">
+            <i class="fas fa-shoe-prints"></i> UrbanKicks
+        </a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html" class="active">Productos</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="/index.html">Contacto</a>
+            <a href="#" id="cart-link" style="position:relative;">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count" style="background:#ffa400;color:#fff;border-radius:50%;padding:2px 7px;font-size:0.8rem;position:absolute;top:-8px;right:-12px;">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Encabezado de productos -->
+    <section class="products-header">
+        <h1>Nuestro Catálogo Completo</h1>
+        <p>Descubre todos nuestros modelos de tenis deportivos</p>
+    </section>
+
+    
+
+    <!-- Todos los productos -->
+    <section class="all-products-section">
+        <!-- Página 1 -->
+        <div class="all-products-grid products-page products-page-1">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-badge">-20%</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>AirMax Runner Pro</h3>
+                    <p class="product-description">Tenis deportivos con tecnología de amortiguación AirMax para máxima comodidad.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                                <!-- Las tallas se llenarán con JS -->
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" data-color="Azul" style="background-color: #2a2a72;"></div>
+                                <div class="color-option" data-color="Negro" style="background-color: #1e1e24;"></div>
+                                <div class="color-option" data-color="Amarillo" style="background-color: #ffa400;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,499</span>
+                            <span class="original-price">$1,799</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                        <button class="add-to-cart-btn" aria-label="Agregar al carrito">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-badge">Nuevo</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Urban Flex 2023</h3>
+                    <p class="product-description">Diseño urbano con suela flexible para adaptarse a cualquier superficie.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" data-color="Negro" style="background-color: #1e1e24;"></div>
+                                <div class="color-option" data-color="Gris" style="background-color: #6c757d;"></div>
+                                <div class="color-option" data-color="Blanco" style="background-color: #f8f9fa; border: 1px solid #ddd;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,299</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                        <button class="add-to-cart-btn" aria-label="Agregar al carrito">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="product-badge">Edición Especial</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Retro 90's Edition</h3>
+                    <p class="product-description">Edición especial con diseño retro de los 90s. Colección limitada.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" data-color="Amarillo" style="background-color: #ffa400;"></div>
+                                <div class="color-option" data-color="Rojo" style="background-color: #ff6b6b;"></div>
+                                <div class="color-option" data-color="Azul" style="background-color: #2a2a72;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$2,199</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                        <button class="add-to-cart-btn" aria-label="Agregar al carrito">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <div class="product-badge">Best Seller</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Trail Blazer XT</h3>
+                    <p class="product-description">Tenis para trail running con suela antideslizante y protección contra impactos.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" data-color="Negro" style="background-color: #1e1e24;"></div>
+                                <div class="color-option" data-color="Azul" style="background-color: #2a2a72;"></div>
+                                <div class="color-option" data-color="Gris" style="background-color: #6c757d;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,699</span>
+                            <span class="original-price">$1,999</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                        <button class="add-to-cart-btn" aria-label="Agregar al carrito">
+                            <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card">
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Court Classic</h3>
+                    <p class="product-description">Tenis clásicos para cancha con excelente soporte lateral y durabilidad.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" style="background-color: #ffffff; border: 1px solid #ddd;"></div>
+                                <div class="color-option" style="background-color: #1e1e24;"></div>
+                                <div class="color-option" style="background-color: #ff6b6b;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,599</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="product-card">
+                <div class="product-badge">Limited</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Ultra Light 2.0</h3>
+                    <p class="product-description">Los tenis más ligeros del mercado con solo 180g por pieza.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" style="background-color: #2a2a72;"></div>
+                                <div class="color-option" style="background-color: #ffa400;"></div>
+                                <div class="color-option" style="background-color: #6c757d;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,399</span>
+                            <span class="original-price">$1,749</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="product-card">
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Performance Run</h3>
+                    <p class="product-description">Tenis diseñados para corredores de alto rendimiento con sistema de amortiguación reactiva.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" style="background-color: #1e1e24;"></div>
+                                <div class="color-option" style="background-color: #ff6b6b;"></div>
+                                <div class="color-option" style="background-color: #2a2a72;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,899</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="product-card">
+                <div class="product-badge">Best Seller</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Street Style Pro</h3>
+                    <p class="product-description">Combinación perfecta entre estilo urbano y comodidad deportiva.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" style="background-color: #2a2a72;"></div>
+                                <div class="color-option" style="background-color: #1e1e24;"></div>
+                                <div class="color-option" style="background-color: #6c757d;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,599</span>
+                        </div>
+                        <button class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Página 2 -->
+        <div class="all-products-grid products-page products-page-2" style="display:none;">
+            <!-- Producto ejemplo página 2 -->
+            <div class="product-card">
+                <div class="product-badge">Nuevo</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1517260911205-8a3b66e1a8df?auto=format&fit=crop&w=800&q=80" alt="Tenis deportivo" class="product-main-image">
+                </div>
+                <div class="product-info">
+                    <h3>Urban Street 2</h3>
+                    <p class="product-description">Tenis urbanos edición 2024.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                                <!-- Las tallas se llenarán con JS -->
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" data-color="Negro" style="background-color: #1e1e24;"></div>
+                                <div class="color-option" data-color="Blanco" style="background-color: #fff; border:1px solid #ccc;"></div>
+                                <div class="color-option" data-color="Azul" style="background-color: #2a2a72;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$1,299</span>
+                        </div>
+                        <button class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Comprar</button>
+                        <button class="add-to-cart-btn" aria-label="Agregar al carrito"><i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Agrega más productos para la página 2 aquí, usando la misma estructura -->
+        </div>
+
+        <!-- Página 3 -->
+        <div class="all-products-grid products-page products-page-3" style="display:none;">
+            <!-- Producto ejemplo página 3 -->
+            <div class="product-card">
+                <div class="product-badge">Oferta</div>
+                <div class="product-images">
+                    <img src="https://images.unsplash.com/photo-1517260911205-8a3b66e1a8df?auto=format&fit=crop&w=800&q=80" alt="Tenis deportivo" class="product-main-image">
+                </div>
+                <div class="product-info">
+                    <h3>Classic White</h3>
+                    <p class="product-description">Tenis clásicos blancos para cualquier ocasión.</p>
+                    <div class="product-details">
+                        <div class="product-size">
+                            <span>Talla:</span>
+                            <select class="size-select">
+                                <option value="">Selecciona tu talla</option>
+                                <!-- Las tallas se llenarán con JS -->
+                            </select>
+                        </div>
+                        <div class="product-color">
+                            <span>Color:</span>
+                            <div class="color-options">
+                                <div class="color-option" data-color="Blanco" style="background-color: #fff; border:1px solid #ccc;"></div>
+                                <div class="color-option" data-color="Negro" style="background-color: #1e1e24;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div>
+                            <span class="price">$999</span>
+                            <span class="original-price">$1,299</span>
+                        </div>
+                        <button class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Comprar</button>
+                        <button class="add-to-cart-btn" aria-label="Agregar al carrito"><i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Agrega más productos para la página 3 aquí, usando la misma estructura -->
+        </div>
+
+        <!-- Paginación -->
+        <div class="pagination">        
+            <button class="page-btn active" data-page="1">1</button>
+            <button class="page-btn" data-page="2">2</button>
+            <button class="page-btn" data-page="3">3</button>
+        </div>
+    </section>
+<!-- ...existing code... -->
+<!-- Modal del carrito -->
+<div id="cart-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:2000; justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:2rem; border-radius:10px; min-width:300px; max-width:90vw; position:relative;">
+        <button id="close-cart" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+        <h2>Carrito de compras</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total" style="margin-top:1rem; font-weight:bold;"></div>
+        <button id="send-cart-whatsapp" style="margin-top:1rem; background:#25d366; color:#fff; border:none; padding:0.7rem 1.5rem; border-radius:5px; font-size:1rem; cursor:pointer;">
+    <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+</button>
+    </div>
+</div>
+<!-- ...existing code... -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>UrbanKicks</h3>
+                <p>Los mejores tenis deportivos con estilo urbano y máxima comodidad para tus pies.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="/index.html">Contacto</a>
+            </div>
+            <div class="footer-column">
+                <h3>Soporte</h3>
+                <a href="#">Preguntas Frecuentes</a>
+                <a href="#">Envíos y Devoluciones</a>
+                <a href="#">Guía de Tallas</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 UrbanKicks. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Enlaza tu archivo JS aquí -->
+         <script src="tallas.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
