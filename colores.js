@@ -12,10 +12,11 @@ const coloresPorProducto = {
   "Street Style Pro":     ["#34495e", "#7f8c8d", "#ecf0f1"]
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+function inicializarColores() {
   document.querySelectorAll('.product-card').forEach(card => {
     const nombre = card.querySelector('.product-info h3').textContent.trim();
     const container = card.querySelector('.color-options');
+    if (!container) return;
     const colores = coloresPorProducto[nombre] || [];
 
     // limpia cualquier opción previa
@@ -30,5 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
       container.appendChild(div);
     });
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', inicializarColores);
+} else {
+  inicializarColores();
+}
 

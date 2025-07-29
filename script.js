@@ -185,32 +185,37 @@ document.querySelectorAll('.page-btn').forEach(btn => {
     });
 });
 
-// Selección de color en productos
-document.querySelectorAll('.color-options').forEach(options => {
-    options.querySelectorAll('.color-option').forEach(option => {
-        option.addEventListener('click', function() {
-            options.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected-color'));
-            this.classList.add('selected-color');
+// Acciones que dependen del DOM completo
+window.addEventListener('DOMContentLoaded', () => {
+    // Selección de color en productos
+    document.querySelectorAll('.color-options').forEach(options => {
+        options.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                options.querySelectorAll('.color-option').forEach(opt =>
+                    opt.classList.remove('selected-color'));
+                this.classList.add('selected-color');
+            });
         });
     });
-});
 
-// Al cargar la página, actualiza el contador
-updateCartCount();
-
-document.querySelectorAll('.product-card').forEach(card => {
-    const nameElem = card.querySelector('.product-info h3');
-    const select = card.querySelector('.size-select');
-    if (nameElem && select && typeof tallasPorProducto !== "undefined") {
-        const nombre = nameElem.textContent.trim();
-        const tallas = tallasPorProducto[nombre];
-        if (Array.isArray(tallas)) {
-            tallas.forEach(talla => {
-                const option = document.createElement('option');
-                option.value = talla;
-                option.textContent = talla;
-                select.appendChild(option);
-            });
+    // Llenar las tallas disponibles
+    document.querySelectorAll('.product-card').forEach(card => {
+        const nameElem = card.querySelector('.product-info h3');
+        const select = card.querySelector('.size-select');
+        if (nameElem && select && typeof tallasPorProducto !== 'undefined') {
+            const nombre = nameElem.textContent.trim();
+            const tallas = tallasPorProducto[nombre];
+            if (Array.isArray(tallas)) {
+                tallas.forEach(talla => {
+                    const option = document.createElement('option');
+                    option.value = talla;
+                    option.textContent = talla;
+                    select.appendChild(option);
+                });
+            }
         }
-    }
+    });
+
+    // Al cargar la página, actualiza el contador
+    updateCartCount();
 });
