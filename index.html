@@ -1,429 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UrbanKicks: tenis deportivos premium con estilo urbano, amortiguación AirMax y ofertas exclusivas.">
-    <title>UrbanKicks - Tenis Deportivos Premium</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanKicks: tenis deportivos premium con estilo urbano, amortiguación AirMax y ofertas exclusivas.">
+  <meta property="og:title" content="UrbanKicks – Tenis Deportivos Premium">
+  <meta property="og:description" content="Descubre los últimos lanzamientos y ofertas especiales de UrbanKicks.">
+  <meta property="og:image" content="ruta/a/imagen-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>UrbanKicks - Tenis Deportivos Premium</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.min.css">
 </head>
-
-    <title>UrbanKicks - Tenis Deportivos Premium</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <meta property="og:title" content="UrbanKicks – Tenis Deportivos Premium">
-    <meta property="og:description" content="Descubre los últimos lanzamientos y ofertas especiales de UrbanKicks.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
-    <meta name="twitter:card" content="summary_large_image">
-</head>
- main
 <body>
-    <!-- Header -->
-    <header>
-        <a href="#inicio" class="logo">
-            <i class="fas fa-shoe-prints"></i> UrbanKicks
-        </a>
-        <nav>
-            <a href="index.html" class="active">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="#ofertas">Ofertas</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#" id="cart-link" style="position:relative;">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count" class="cart-count" style="background:#ffa400;color:#fff;border-radius:50%;padding:2px 7px;font-size:0.8rem;position:absolute;top:-8px;right:-12px;">0</span>
-            </a>
-        </nav>
-    </header>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <header>
+    <a href="#inicio" class="logo">
+      <i class="fas fa-shoe-prints"></i> UrbanKicks
+    </a>
+    <nav>
+      <a href="index.html" class="active">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#contacto">Contacto</a>
+      <button id="cart-link" class="cart-icon" aria-label="Abrir carrito">
+        <i class="fas fa-shopping-cart"></i>
+        <span aria-live="polite"><span id="cart-count" class="cart-count">0</span></span>
+      </button>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
+  <main id="main-content">
     <section class="hero">
-        <div class="hero-content">
-            <h1>Tenis Deportivos Premium</h1>
-            <p>Encuentra los tenis más cómodos y con el mejor estilo para complementar tu outfit</p>
-            <a href="productos.html" class="btn">Ver Todos los Productos</a>
-        </div>
+      <picture>
+        <source srcset="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=600&q=80&fm=webp 600w, https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=1200&q=80&fm=webp 1200w" type="image/webp">
+        <source srcset="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=600&q=80 600w, https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=1200&q=80 1200w" type="image/jpeg">
+        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=1200&q=80" alt="Tenis UrbanKicks" loading="lazy" sizes="(max-width: 600px) 600px, 1200px">
+      </picture>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Tenis Deportivos Premium</h1>
+        <p>Encuentra los tenis más cómodos y con el mejor estilo para complementar tu outfit</p>
+        <a href="productos.html" class="btn" aria-label="Ver todos los productos de UrbanKicks">Ver Todos los Productos</a>
+      </div>
     </section>
 
-    <!-- Nuevos Lanzamientos -->
     <section id="nuevos" class="products-section">
-        <div class="section-title">
-            <h2>Nuevos Lanzamientos</h2>
-        </div>
-        <div class="products-grid">
-            <!-- Producto 1 -->
-            <div class="product-card">
-                <div class="product-badge">Nuevo</div>
-                <div class="product-images">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
-                    <div class="product-thumbnails">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3>AirMax Runner Pro</h3>
-                    <p class="product-description">Tenis deportivos con tecnología de amortiguación AirMax para máxima comodidad durante tus entrenamientos.</p>
-                    <div class="product-details">
-                        <div class="product-size">
-                            <span>Talla:</span>
-                            <select class="size-select" aria-label="Seleccionar talla AirMax Runner Pro">
-                                <option value="">Selecciona tu talla</option>
-                            </select>
-                        </div>
-                        <div class="product-color">
-                            <span>Color:</span>
-                            <div class="color-options">
-                                <div class="color-option" data-color="" style="background-color: #2a2a72;"></div>
-                                <div class="color-option" style="background-color: #1e1e24;"></div>
-                                <div class="color-option" style="background-color: #ffa400;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <div>
-                            <span class="price">$1,499</span>
-                            <span class="original-price">$1,799</span>
-                        </div>
-                        <button class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Comprar
-                        </button>
-                        <button class="add-to-cart-btn" aria-label="Agregar al carrito">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="product-card">
-                <div class="product-images">
-                    <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
-                    <div class="product-thumbnails">
-                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3>Urban Flex 2023</h3>
-                    <p class="product-description">Diseño urbano con suela flexible para adaptarse a cualquier superficie. Ideal para el día a día.</p>
-                    <div class="product-details">
-                        <div class="product-size">
-                            <span>Talla:</span>
-                            <select class="size-select">
-                                <option value="">Selecciona tu talla</option>
-                            </select>
-                        </div>
-                        <div class="product-color">
-                            <span>Color:</span>
-                            <div class="color-options">
-                                <div class="color-option" style="background-color: #1e1e24;"></div>
-                                <div class="color-option" style="background-color: #6c757d;"></div>
-                                <div class="color-option" style="background-color: #f8f9fa; border: 1px solid #ddd;"></div>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="product-price">
-                        <div>
-                            <span class="price">$1,299</span>
-                        </div>
-                        <button class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Comprar
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="product-card">
-                <div class="product-badge">Limited</div>
-                <div class="product-images">
-                    <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
-                    <div class="product-thumbnails">
-                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3>Retro 90's Edition</h3>
-                    <p class="product-description">Edición especial con diseño retro de los 90s. Colección limitada con numeración única.</p>
-                    <div class="product-details">
-                        <div class="product-size">
-                            <span>Talla:</span>
-                            <select class="size-select">
-                                <option value="">Selecciona tu talla</option>
-                            </select>
-                        </div>
-                        <div class="product-color">
-                            <span>Color:</span>
-                            <div class="color-options">
-                                <div class="color-option" style="background-color: #ffa400;"></div>
-                                <div class="color-option" style="background-color: #ff6b6b;"></div>
-                                <div class="color-option" style="background-color: #2a2a72;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <div>
-                            <span class="price">$2,199</span>
-                        </div>
-                        <button class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Comprar
-                        </button>
-                        <button class="add-to-cart-btn" aria-label="Agregar al carrito">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="product-card">
-                <div class="product-images">
-                    <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
-                    <div class="product-thumbnails">
-                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3>Trail Blazer XT</h3>
-                    <p class="product-description">Tenis para trail running con suela antideslizante y protección contra impactos. Perfecto para terrenos irregulares.</p>
-                    <div class="product-details">
-                        <div class="product-size">
-                            <span>Talla:</span>
-                            <select class="size-select">
-                                <option value="">Selecciona tu talla</option>
-                            </select>
-                        </div>
-                        <div class="product-color">
-                            <span>Color:</span>
-                            <div class="color-options">
-                                <div class="color-option" style="background-color: #1e1e24;"></div>
-                                <div class="color-option" style="background-color: #2a2a72;"></div>
-                                <div class="color-option" style="background-color: #6c757d;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <div>
-                            <span class="price">$1,699</span>
-                            <span class="original-price">$1,999</span>
-                        </div>
-                        <button class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Comprar
-                        </button>
-                        <button class="add-to-cart-btn" aria-label="Agregar al carrito">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="section-title">
+        <h2>Nuevos Lanzamientos</h2>
+      </div>
+      <div class="products-grid" id="products-grid"></div>
     </section>
 
-    <!-- Más Vendidos -->
-    <section id="mas-vendidos" class="products-section bg-light">
-        <div class="section-title">
-            <h2>Más Vendidos</h2>
-        </div>
-        <div class="products-grid">
-            <!-- Productos 5-8 similares a los anteriores -->
-         <div class="product-card">
-                <div class="product-images">
-                    <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
-                    <div class="product-thumbnails">
-                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3>Trail Blazer XT</h3>
-                    <p class="product-description">Tenis para trail running con suela antideslizante y protección contra impactos. Perfecto para terrenos irregulares.</p>
-                    <div class="product-details">
-                        <div class="product-size">
-                            <span>Talla:</span>
-                            <select class="size-select">
-                                <option value="">Selecciona tu talla</option>
-                            </select>
-                        </div>
-                        <div class="product-color">
-                            <span>Color:</span>
-                            <div class="color-options">
-                                <div class="color-option" style="background-color: #1e1e24;"></div>
-                                <div class="color-option" style="background-color: #2a2a72;"></div>
-                                <div class="color-option" style="background-color: #6c757d;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <div>
-                            <span class="price">$1,699</span>
-                            <span class="original-price">$1,999</span>
-                        </div>
-                        <button class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Comprar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ofertas Especiales -->
-    <section id="ofertas" class="products-section">
-        <div class="section-title">
-            <h2>Ofertas Especiales</h2>
-        </div>
-        <div class="products-grid">
-            <!-- Productos 9-10 similares a los anteriores -->
-
-        </div><!-- Producto 1 -->
-            <div class="product-card">
-                <div class="product-badge">-20%</div>
-                <div class="product-images">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tenis deportivo" class="product-main-image">
-                    <div class="product-thumbnails">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 1" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 2" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 3" class="product-thumbnail">
-                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Miniatura 4" class="product-thumbnail">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3>AirMax Runner Pro</h3>
-                    <p class="product-description">Tenis deportivos con tecnología de amortiguación AirMax para máxima comodidad.</p>
-                    <div class="product-details">
-                        <div class="product-size">
-                            <span>Talla:</span>
-                            <select class="size-select">
-                                <option value="">Selecciona tu talla</option>
-                            </select>
-                        </div>
-                        <div class="product-color">
-                            <span>Color:</span>
-                            <div class="color-options">
-                                <div class="color-option" style="background-color: #2a2a72;"></div>
-                                <div class="color-option" style="background-color: #1e1e24;"></div>
-                                <div class="color-option" style="background-color: #ffa400;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        <div>
-                            <span class="price">$1,499</span>
-                            <span class="original-price">$1,799</span>
-                        </div>
-                        <button class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Comprar
-                        </button>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- Contacto -->
     <section id="contacto" class="contact-section">
-        <div class="section-title">
-            <h2>Contacto</h2>
+      <div class="section-title">
+        <h2>Contacto</h2>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Información de Contacto</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Av. Principal 123, Ciudad, País</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <p>+1 234 567 890</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>info@urbankicks.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <p>Lunes a Viernes: 9am - 7pm</p>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Información de Contacto</h3>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Av. Principal 123, Ciudad, País</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+1 234 567 890</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>info@urbankicks.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <p>Lunes a Viernes: 9am - 7pm</p>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
+        <div class="contact-form">
+          <h3>Envíanos un Mensaje</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" type="text" required minlength="2" maxlength="50">
             </div>
-            <div class="contact-form">
-                <h3>Envíanos un Mensaje</h3>
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Mensaje" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Mensaje</button>
-                </form>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" required>
             </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" required minlength="10" maxlength="500"></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar Mensaje</button>
+            <div id="form-message" role="alert"></div>
+          </form>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>UrbanKicks</h3>
-                <p>Los mejores tenis deportivos con estilo urbano y máxima comodidad para tus pies.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Enlaces Rápidos</h3>
-                <a href="#nuevos">Nuevos Lanzamientos</a>
-                <a href="#mas-vendidos">Más Vendidos</a>
-                <a href="#ofertas">Ofertas</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-            <div class="footer-column">
-                <h3>Soporte</h3>
-                <a href="#">Preguntas Frecuentes</a>
-                <a href="#">Envíos y Devoluciones</a>
-                <a href="#">Guía de Tallas</a>
-                <a href="#">Términos y Condiciones</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 UrbanKicks. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Modal del carrito -->
-<div id="cart-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:2000; justify-content:center; align-items:center;">
-    <div style="background:#fff; padding:2rem; border-radius:10px; min-width:300px; max-width:90vw; position:relative;">
-        <button id="close-cart" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
-        <h2>Carrito de compras</h2>
-        <div id="cart-items"></div>
-        <div id="cart-total" style="margin-top:1rem; font-weight:bold;"></div>
-        <button id="send-cart-whatsapp" style="margin-top:1rem; background:#25d366; color:#fff; border:none; padding:0.7rem 1.5rem; border-radius:5px; font-size:1rem; cursor:pointer;">
-            <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
-        </button>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>UrbanKicks</h3>
+        <p>Los mejores tenis deportivos con estilo urbano y máxima comodidad para tus pies.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#nuevos">Nuevos Lanzamientos</a></li>
+          <li><a href="#mas-vendidos">Más Vendidos</a></li>
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Soporte</h3>
+        <ul>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Envíos y Devoluciones</a></li>
+          <li><a href="#">Guía de Tallas</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+      </div>
     </div>
-</div>
+    <div class="copyright">
+      <p>&copy; <span id="current-year"></span> UrbanKicks. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-    <script src="tallas.js"></script>
-    <script src="colores.js"></script>
-    <script src="script.js"></script>
+  <div id="cart-modal" class="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="cart-modal-content">
+      <button id="close-cart" class="close-cart" aria-label="Cerrar carrito">&times;</button>
+      <h2 id="cart-title">Carrito de compras</h2>
+      <div id="cart-items"></div>
+      <div id="cart-total"></div>
+      <button id="send-cart-whatsapp" class="send-cart-whatsapp">
+        <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <template id="product-template">
+    <div class="product-card">
+      <span class="product-badge" aria-label="Etiqueta"></span>
+      <div class="product-images">
+        <img class="product-main-image" alt="" loading="lazy">
+        <div class="product-thumbnails"></div>
+      </div>
+      <div class="product-info">
+        <h3></h3>
+        <p class="product-description"></p>
+        <div class="product-details">
+          <div class="product-size">
+            <label class="size-label" for=""></label>
+            <select class="size-select" id=""></select>
+          </div>
+          <div class="product-color">
+            <span>Color:</span>
+            <div class="color-options"></div>
+          </div>
+        </div>
+        <div class="product-price">
+          <div>
+            <span class="price"></span>
+            <span class="original-price"></span>
+          </div>
+          <button class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Comprar
+          </button>
+          <button class="add-to-cart-btn" aria-label="Agregar al carrito">
+            <i class="fas fa-cart-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="bundle.min.js" defer></script>
 </body>
 </html>
